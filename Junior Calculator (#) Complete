@@ -1,0 +1,84 @@
+# Дефинираме всички функции на калкулатора ни. със променливи (x и y)
+# (x) ще бъде първото ни число а (y) второто зададено от клиента!
+
+def add(x,y):
+    return x + y
+    
+def substract(x,y):
+    return x - y
+    
+def multiply(x,y):
+    return x * y
+    
+def devide(x,y):
+    return x / y
+
+print("Select Calculator Operation by Number:")
+print("1.-ADD")
+print("2.-SUBSTRACT")
+print("3.-MULTIPLY")
+print("4.-DEVIDE")
+
+# Вкарваме всичко в while loop с if стейтмънти: като ако условието е изпълнено-
+# изпълняваме желаната от клиента функция!
+# user_input трябва да бъде int (уверяваме се със try and except)
+# ако user_input не е от 1-4 тогава имаме error message.
+
+while True:
+    user_choice = input("1/2/3/4")
+
+    if user_choice not in {"1","2","3","4"}:
+        print("Please enter a valid calculator option!")
+    
+    if user_choice == "1":
+        try:
+            user_input1 = int(input("Please enter the first number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        try:
+            user_input2 = int(input("Please enter the second number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        print (str(user_input1) + " + " + str(user_input2) + " = " + str(add(user_input1,user_input2)))
+    
+    if user_choice == "2":
+        try:
+            user_input1 = int(input("Please enter the first number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        try:
+            user_input2 = int(input("Please enter the second number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        print (str(user_input1) + " - " + str(user_input2) + " = " + str(substract(user_input1,user_input2)))
+
+    if user_choice == "3":
+        try:
+            user_input1 = int(input("Please enter the first number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        try:
+            user_input2 = int(input("Please enter the second number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        print (str(user_input1) + " * " + str(user_input2) + " = " + str(multiply(user_input1,user_input2)))
+    
+    if user_choice == "4":
+        try:
+            user_input1 = int(input("Please enter the first number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        try:
+            user_input2 = int(input("Please enter the second number."))
+        except ValueError:
+            print("Please enter a number!")
+            break
+        print (str(user_input1) + " / " + str(user_input2) + " = " + str(devide(user_input1,user_input2)))    
+  

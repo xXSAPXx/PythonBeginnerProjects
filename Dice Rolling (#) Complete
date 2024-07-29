@@ -1,0 +1,15 @@
+
+# Нужен ни е random модул за да може компютъра да "хвърли" зара.
+import random
+
+# Играта ще се играе 5 пъти (За целта използваме for loop)
+for user_input in range (5):
+    computer_choice=random.randint(1,6)
+    # изборът на компютъра
+    
+    # Елементарен if statement за да създадем иницирането на хвълянето на зара.
+    user_input=input("Type ROLL to roll the dice!").lower()
+    if user_input!="roll":
+        print("Please type ROLL next time")
+        continue
+    print("The dice rolled the number " + str(computer_choice))

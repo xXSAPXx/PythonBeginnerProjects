@@ -1,0 +1,69 @@
+import random 
+import time
+
+possible_spin1 = [1,1,1]
+possible_spin2 = [2,2,2]
+possible_spin3 = [3,3,3]
+
+def computer_spin():
+    test_list=[]
+    for computer_spin in range(3):
+        choice_list = [1,2,3]
+        computer_choice = random.choice(choice_list)
+        test_list.append(computer_choice)
+    print(test_list)    
+    
+    if test_list == possible_spin1:
+        new_balance = (user_bet_int *3) + (deposit_int - user_bet_int)
+        print("You won!\nYour currect balance is " + str(new_balance))
+        
+    elif test_list == possible_spin2:
+        new_balance = (user_bet_int *6) + (deposit_int - user_bet_int)
+        print("You won!\nYour currect balance is " + str(new_balance)+" dollars")
+        
+    elif test_list == possible_spin3:
+        new_balance = (user_bet_int *10) + (deposit_int - user_bet_int)
+        print("You won!\nYour currect balance is " + str(new_balance)+" dollars") 
+        
+    else:
+        new_balance1 = new_balance - user_bet_int
+        print("You lost...\nYour currect balance is " + str(new_balance1)+" dollars")
+        
+while True:
+    
+    deposit=input("Please enter the amount you want to deposit!")
+    try:
+        deposit_int=int(deposit)
+    except ValueError:
+        print("Please enter a number!")
+        continue
+    
+    if deposit_int <=0:
+        print("Please enter an amount bigger than zero!")
+        continue
+    else:
+        break
+    
+print("You succefully deposited " + str(deposit_int) +" dollars.")
+new_balance=deposit_int
+
+while True:
+    user_bet=input("Please enter the amount you wish to bet.")
+    try:
+        user_bet_int=int(user_bet)
+    except ValueError:
+        print("Please enter a number!")
+        continue
+
+    if user_bet_int > deposit_int or user_bet_int > new_balance:
+        print("Invalid balance!")
+        continue
+    else:
+        print("You are now betting " + str(user_bet_int) + " dollars! Please wait...")
+        time.sleep(2)
+        computer_spin()
+
+
+
+
+

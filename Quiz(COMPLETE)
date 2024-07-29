@@ -1,0 +1,43 @@
+
+print ("Hello would you like to play my quiz game?")
+print ("Yes " + "Or " + "No? :D " )
+
+answer=input()
+if answer.lower() != "yes":
+    exit("Bye then") 
+    
+score=3 
+print("Awesome here is the first question!")
+q1=input("What does CPU stand for?")
+if q1.lower() != "cpu":
+    print("Incorrect")
+    score-=1
+else:
+    print("Correct!")
+
+
+q1=input("What does GPU stand for?")
+if q1.lower() != "gpu":
+    print("Incorrect")
+    score-=1
+else:
+    print("Correct!")
+
+q1=input("What does RAM stand for?")
+if q1.lower() != "ram":
+    print("Incorrect")
+    score-=1
+else:
+    print("Correct!") 
+persantage=(score)/3*100
+print ("Your score from the game is " + str(score))
+print ("Your score persantage is " + str(persantage)+ "%")
+
+if score<=1:
+    print("You need to learn more mate...")
+    
+if score==2:
+    print("Good job keep on learning!")
+    
+if score==3:
+    print("Perfect score!!! You are a genius!")

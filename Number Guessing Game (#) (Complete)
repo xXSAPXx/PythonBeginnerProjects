@@ -1,0 +1,35 @@
+import random
+
+computer_desicion = random.randint(0,10)
+
+user_score = 0
+
+while True:
+    try:
+        player_choice = int(input("Choose a number between 0 and 10"))
+    except ValueError:
+        print ("Please enter only numbers!")
+        quit()
+    
+    if player_choice == computer_desicion:
+        print ("You got it!")
+        break
+    
+    elif player_choice > computer_desicion:
+        print ("Your guess is above the target number.")
+        user_score+=1
+        continue
+        
+    
+    elif player_choice < computer_desicion:
+        print ("Your guess is below the target number.")
+        user_score+=1
+        continue
+        
+    
+print("You managed to guess the random number in " + str(user_score) + " tries" )
+
+       
+    
+
+

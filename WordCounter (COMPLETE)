@@ -1,0 +1,6 @@
+
+
+user_input = input("Please write some text and the computer will count the number of words for you!")
+user_input_split = user_input.split()
+number_of_words = (len(user_input_split))
+print(number_of_words)

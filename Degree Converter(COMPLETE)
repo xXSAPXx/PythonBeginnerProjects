@@ -1,0 +1,21 @@
+
+def Temp_C():
+    Temperature_C=float(input("Please enter the current EU temperature: "))
+    print("Temperature in fahrenheit is " + str((Temperature_C*1.8)+32))
+    
+def Temp_F():
+    Temperature_F=float(input("Please enter the current US temperature: "))
+    print("Temperature in celsius is " + str((Temperature_F-32)/1.8))
+    
+while True:    
+    User=input("What value do you want to convert? Type C for celsius and F for fahrenheit.").lower()
+
+    if User=="q":
+        print("Thank you for using my degree converter! Have a nice day!")
+        break
+
+    if User=="c":
+        Temp_C()
+
+    elif User=="f":
+        Temp_F()

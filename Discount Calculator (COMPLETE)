@@ -1,0 +1,25 @@
+while True:
+    try:
+        Price = float(input("Please enter the item's price (USD) : "))
+    except ValueError:
+        print ("Please enter valid (NUMBER) value! ")
+        continue
+    try:
+        Amount = int(input("Please enter the item amount you want to purchase: "))
+    except ValueError:
+        print ("Please enter valid (NUMBER) value! ")
+        continue
+    try:
+        Discount = float(input("Please enter the item's discount percentage: "))
+    except ValueError:
+        print ("Please enter valid (NUMBER) value! ")
+        continue
+
+    Price_ALL = Price * Amount
+
+    Discount_Persantage = (Discount*Price_ALL)/100
+
+    Final_PRICE = Price_ALL - (Discount_Persantage)
+
+    print ("Your final product price with the discount is: " + str(Final_PRICE) + " (USD)")
+    print ("You are saving " + str(Discount_Persantage) + " Dollars shopping with us!")

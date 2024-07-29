@@ -1,0 +1,106 @@
+
+import random
+
+def computer_choice():
+    possible_words = ["eggs","dogs","cats"]
+    global computer_word
+    computer_word = random.choice (possible_words)
+    print(computer_word)
+    
+def menu():
+    new_game = input("Welcome to Hangman! Do you want to play? yes/no")
+    
+    if new_game in ("yes","yes "," yes" ):
+        print("Great, here we go!")
+        game()
+        
+    elif new_game in ("no","no "," no" ):
+        print("Goodbye then.")
+        
+    else:
+        print("Please enter a valid command next time!")
+        quit()
+        
+def game():
+    computer_choice()
+    wrong_guesses = 0
+    list_guesses = []
+    while wrong_guesses != 5:
+        guess = input("Please enter your guess?")
+        
+        if guess in computer_word:
+            print (guess + " is in the word!")
+            list_guesses.append(guess)
+            print ("Letters guessed so far: " , list_guesses)
+            
+        elif guess not in computer_word:
+            wrong_guesses += 1
+            print (guess + " is NOT in the word!")              
+            
+        if guess == computer_word:
+            print("You correctly guessed the word! " + computer_word + " YOU WON!")
+            quit()
+            
+        if wrong_guesses == 1:
+            print("   _____ \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("You have 4 more guesses remaining!")
+            print ("Letters guessed so far: " , list_guesses)
+            
+        if wrong_guesses == 2:
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("You have 3 more guesses remaining!")
+            print ("Letters guessed so far: " , list_guesses)
+            
+        if wrong_guesses == 3:
+            print("   _____ \n"
+                 "  |     | \n"
+                 "  |     |\n"
+                 "  |     | \n"
+                 "  |      \n"
+                 "  |      \n"
+                 "  |      \n"
+                 "__|__\n")
+            print("You have 2 more guesses remaining!")
+            print ("Letters guessed so far: " , list_guesses)
+            
+        if wrong_guesses == 4:
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("You have 1 more guesses remaining!")
+            print ("Letters guessed so far: " , list_guesses)
+            
+        if wrong_guesses == 5:
+            print ("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |    /|\ \n"
+                  "  |    / \ \n"
+                  "__|__\n")
+            
+    print("You lost the game!")
+    print("The word was...." + computer_word)
+    quit()
+    
+menu()

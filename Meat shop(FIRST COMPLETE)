@@ -1,0 +1,12 @@
+
+print ("Hello there, Welcome to my meat store!")
+name = input ("Whats your name?")
+print ("Nice to meet you " + name + "! What would you like from the menu?")
+menu = ("Pork " "Beef " "Chicken")
+print (menu)
+order = input() 
+price = 10.50
+number = input ("How many would you like?")
+print ("No problem, your " + order + " is coming right up!")
+total = int(number) * price 
+print ("There you go.That will be "+ str(total) + " Dollars")

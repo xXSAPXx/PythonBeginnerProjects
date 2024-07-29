@@ -1,0 +1,42 @@
+
+name=input("Hey would you like to go on an adventure? YES or NO?")
+name.lower()
+
+if name == "yes":
+    print("Thats awesome. So listen now... we are two plebs lost in a big forest! \nSuddenly we hear the sounds of a bear approching us!")
+    
+elif name =="no":
+    print("Goodbye then faggot")
+    
+else:
+    print("Please enter a valid option")
+    
+name2=input("Do you think we should RUN OR HIDE???")
+name2.lower()
+
+if name2 == "run":
+    print("Good job mate.... the bear torn us down to shreds.... idiot.... :/")
+    quit()
+    
+elif name2 =="hide":
+    print("PHEEEEEEEW that was close mate. The bear just missed us.")
+    
+else:
+    print("Enter a valid option next time mate")
+    quit()
+    
+print("That was a close call mate but now we need to find a way out of this forest.")
+    
+name3=input("Do you think I should climb a tree and see if I can find something? \nCLIMB OR NAH")
+name3.lower()
+
+if name3 == "climb":
+    print("Moni fell down and broke his leg...... that was a stupid desicion mate :/")
+    quit()
+    
+elif name3 =="nah":
+    print("Ok.. Lets keep going then.")
+    
+else:
+    print("Enter a valid option next time idiot...")
+    quit()
